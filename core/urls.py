@@ -30,6 +30,7 @@ urlpatterns = [
     path('api/', include('friends.urls')),
     path('api/', include('messages_app.urls')),
     path('api/', include('comments.urls')),
+    path('api/', include('reports.urls')),
 ]
 
 if settings.DEBUG:

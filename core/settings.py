@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'friends',
     'messages_app',
     'comments',
+    'reports',
 ]
 
 # Definir o modelo de Usuário customizado
