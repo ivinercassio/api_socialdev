@@ -24,4 +24,7 @@ urlpatterns = [
 
     # Rotas do App de Usuários
     path('api/', include('users.urls')),
+
+    # Rotas do App de Posts
+    path('api/', include('posts.urls')),
 ]
