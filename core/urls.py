@@ -29,6 +29,7 @@ urlpatterns = [
     path('api/', include('tags.urls')), # classe de relacionamento estah junta
     path('api/', include('friends.urls')),
     path('api/', include('messages_app.urls')),
+    path('api/', include('comments.urls')),
 ]
 
 if settings.DEBUG:
