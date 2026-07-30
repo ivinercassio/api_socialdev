@@ -49,7 +49,7 @@ Retorna uma lista com todos os comentários de um post.
 #### `GET /api/reports/:id/post`
 Retorna uma lista com todas as denúncias de um post.
 
-### `GET /api/reports/:id/comment`
+#### `GET /api/reports/:id/comment`
 Retorna uma lista com todas as denúncias de um comment.
 
 ---
