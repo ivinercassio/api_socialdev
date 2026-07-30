@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'drf_spectacular',
 
+    # Configurar o CORS para testes locais
+    'corsheaders',
+
     # Meus Apps
     'users', 
     'posts',
@@ -75,6 +78,7 @@ SPECTACULAR_SETTINGS = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -83,6 +87,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Liberar origens específicas (recomendado para desenvolvimento):
+CORS_ALLOWED_ORIGINS = [
+    # "http://localhost:3000",   # React (Create React App)
+    "http://localhost:5173",   # React (Vite)
+    # "http://127.0.0.1:3000",
+    # "http://127.0.0.1:5173",
+]
+
 
 ROOT_URLCONF = 'core.urls'
 
