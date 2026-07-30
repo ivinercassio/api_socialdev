@@ -1,0 +1,382 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$seedsalt123$zvcooRcuBGxRUGm4I78dXYRqh1Mv7kZy5iyhrJo2S18=",
+      "username": "admin",
+      "email": "admin@socialnet.com",
+      "first_name": "Admin",
+      "last_name": "Sistema",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "public": true,
+      "about": "Conta de administração do sistema.",
+      "type": "ADMIN",
+      "creation_date": "2026-01-10",
+      "date_joined": "2026-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$seedsalt123$+7hVenS3nui68qePdV0Hf7+UpH85NqktwIXa3aHPRXc=",
+      "username": "lucas_silva",
+      "email": "lucas@example.com",
+      "first_name": "Lucas",
+      "last_name": "Silva",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "public": true,
+      "about": "Entusiasta de tecnologia e desenvolvimento web.",
+      "type": "CLIENT",
+      "creation_date": "2026-01-11",
+      "date_joined": "2026-01-11T10:00:00Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$seedsalt123$+7hVenS3nui68qePdV0Hf7+UpH85NqktwIXa3aHPRXc=",
+      "username": "mariana_lima",
+      "email": "mariana@example.com",
+      "first_name": "Mariana",
+      "last_name": "Lima",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "public": true,
+      "about": "Desenvolvedora Frontend e UI/UX designer.",
+      "type": "CLIENT",
+      "creation_date": "2026-01-12",
+      "date_joined": "2026-01-12T10:00:00Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$seedsalt123$+7hVenS3nui68qePdV0Hf7+UpH85NqktwIXa3aHPRXc=",
+      "username": "carlos_dev",
+      "email": "carlos@example.com",
+      "first_name": "Carlos",
+      "last_name": "Eduardo",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "public": false,
+      "about": "Estudante de Ciência da Computação.",
+      "type": "CLIENT",
+      "creation_date": "2026-01-15",
+      "date_joined": "2026-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "posts.post",
+    "pk": 1,
+    "fields": {
+      "title": "Iniciando com React e Redux",
+      "legend": "Hoje comecei um novo projeto em React e estou explorando o gerenciamento de estado global.",
+      "author": 2,
+      "like": 12,
+      "date_published": "2026-02-01T14:30:00Z"
+    }
+  },
+  {
+    "model": "posts.post",
+    "pk": 2,
+    "fields": {
+      "title": "Setup do Local de Trabalho",
+      "legend": "Acabei de reorganizar minha mesa com dois monitores e iluminação LED para estudos.",
+      "author": 3,
+      "like": 25,
+      "date_published": "2026-02-02T09:15:00Z"
+    }
+  },
+  {
+    "model": "posts.post",
+    "pk": 3,
+    "fields": {
+      "title": "Dicas de Django REST Framework",
+      "legend": "Usar ViewSets e Routers acelera drasticamente o desenvolvimento de APIs RESTful.",
+      "author": 4,
+      "like": 8,
+      "date_published": "2026-02-03T18:45:00Z"
+    }
+  },
+  {
+    "model": "posts.post",
+    "pk": 4,
+    "fields": {
+      "title": "A importância de Testes Automatizados",
+      "legend": "Escrever testes unitários e de integração evita regressões e garante a qualidade do código.",
+      "author": 2,
+      "like": 19,
+      "date_published": "2026-02-04T11:20:00Z"
+    }
+  },
+  {
+    "model": "mideas.midea",
+    "pk": 1,
+    "fields": {
+      "owner": 2,
+      "post": null,
+      "image_profile": true,
+      "file": null,
+      "link": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde"
+    }
+  },
+  {
+    "model": "mideas.midea",
+    "pk": 2,
+    "fields": {
+      "owner": 3,
+      "post": null,
+      "image_profile": true,
+      "file": null,
+      "link": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+    }
+  },
+  {
+    "model": "mideas.midea",
+    "pk": 3,
+    "fields": {
+      "owner": 2,
+      "post": 1,
+      "image_profile": false,
+      "file": null,
+      "link": "https://images.unsplash.com/photo-1633356122544-f134324a6cee"
+    }
+  },
+  {
+    "model": "mideas.midea",
+    "pk": 4,
+    "fields": {
+      "owner": 3,
+      "post": 2,
+      "image_profile": false,
+      "file": null,
+      "link": "https://images.unsplash.com/photo-1587614382346-4ec70e388b28"
+    }
+  },
+  {
+    "model": "tags.tag",
+    "pk": 1,
+    "fields": {
+      "theme": "Tecnologia"
+    }
+  },
+  {
+    "model": "tags.tag",
+    "pk": 2,
+    "fields": {
+      "theme": "Programação"
+    }
+  },
+  {
+    "model": "tags.tag",
+    "pk": 3,
+    "fields": {
+      "theme": "React"
+    }
+  },
+  {
+    "model": "tags.tag",
+    "pk": 4,
+    "fields": {
+      "theme": "Django"
+    }
+  },
+  {
+    "model": "tags.posttag",
+    "pk": 1,
+    "fields": {
+      "tag": 1,
+      "post": 1
+    }
+  },
+  {
+    "model": "tags.posttag",
+    "pk": 2,
+    "fields": {
+      "tag": 3,
+      "post": 1
+    }
+  },
+  {
+    "model": "tags.posttag",
+    "pk": 3,
+    "fields": {
+      "tag": 2,
+      "post": 2
+    }
+  },
+  {
+    "model": "tags.posttag",
+    "pk": 4,
+    "fields": {
+      "tag": 4,
+      "post": 3
+    }
+  },
+  {
+    "model": "friends.friend",
+    "pk": 1,
+    "fields": {
+      "friend_one": 2,
+      "friend_two": 3,
+      "date_start": "2026-01-15"
+    }
+  },
+  {
+    "model": "friends.friend",
+    "pk": 2,
+    "fields": {
+      "friend_one": 2,
+      "friend_two": 4,
+      "date_start": "2026-01-18"
+    }
+  },
+  {
+    "model": "friends.friend",
+    "pk": 3,
+    "fields": {
+      "friend_one": 3,
+      "friend_two": 4,
+      "date_start": "2026-01-20"
+    }
+  },
+  {
+    "model": "friends.friend",
+    "pk": 4,
+    "fields": {
+      "friend_one": 1,
+      "friend_two": 2,
+      "date_start": "2026-01-25"
+    }
+  },
+  {
+    "model": "messages_app.message",
+    "pk": 1,
+    "fields": {
+      "friend": 1,
+      "from_user": 2,
+      "to_user": 3,
+      "text": "E aí Mariana, tudo bem? Vi seu post!",
+      "date_published": "2026-02-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "messages_app.message",
+    "pk": 2,
+    "fields": {
+      "friend": 1,
+      "from_user": 3,
+      "to_user": 2,
+      "text": "Oi Lucas! Tudo ótimo por aqui, obrigada!",
+      "date_published": "2026-02-02T10:05:00Z"
+    }
+  },
+  {
+    "model": "messages_app.message",
+    "pk": 3,
+    "fields": {
+      "friend": 2,
+      "from_user": 2,
+      "to_user": 4,
+      "text": "Carlos, você tem indicação de curso de DRF?",
+      "date_published": "2026-02-03T19:00:00Z"
+    }
+  },
+  {
+    "model": "messages_app.message",
+    "pk": 4,
+    "fields": {
+      "friend": 2,
+      "from_user": 4,
+      "to_user": 2,
+      "text": "Com certeza! Te mandei o link da documentação oficial.",
+      "date_published": "2026-02-03T19:12:00Z"
+    }
+  },
+  {
+    "model": "comments.comment",
+    "pk": 1,
+    "fields": {
+      "text": "Excelente post! Também gosto muito de React.",
+      "post": 1,
+      "owner": 3,
+      "date_published": "2026-02-01T15:00:00Z"
+    }
+  },
+  {
+    "model": "comments.comment",
+    "pk": 2,
+    "fields": {
+      "text": "Ficou muito legal o seu setup!",
+      "post": 2,
+      "owner": 2,
+      "date_published": "2026-02-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "comments.comment",
+    "pk": 3,
+    "fields": {
+      "text": "DRF economiza muito tempo mesmo.",
+      "post": 3,
+      "owner": 2,
+      "date_published": "2026-02-03T20:00:00Z"
+    }
+  },
+  {
+    "model": "comments.comment",
+    "pk": 4,
+    "fields": {
+      "text": "Concordo 100%, testes são indispensáveis.",
+      "post": 4,
+      "owner": 4,
+      "date_published": "2026-02-04T12:00:00Z"
+    }
+  },
+  {
+    "model": "reports.report",
+    "pk": 1,
+    "fields": {
+      "post": 1,
+      "comment": null,
+      "date_report": "2026-02-05T08:00:00Z"
+    }
+  },
+  {
+    "model": "reports.report",
+    "pk": 2,
+    "fields": {
+      "post": 3,
+      "comment": null,
+      "date_report": "2026-02-05T09:30:00Z"
+    }
+  },
+  {
+    "model": "reports.report",
+    "pk": 3,
+    "fields": {
+      "post": null,
+      "comment": 1,
+      "date_report": "2026-02-05T10:15:00Z"
+    }
+  },
+  {
+    "model": "reports.report",
+    "pk": 4,
+    "fields": {
+      "post": null,
+      "comment": 4,
+      "date_report": "2026-02-05T11:00:00Z"
+    }
+  }
+]
