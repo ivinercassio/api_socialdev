@@ -7,6 +7,7 @@ class User(AbstractUser):
         CLIENT = 'CLIENT', 'Client'
         ADMIN = 'ADMIN', 'Admin'
 
+    username = models.CharField(max_length=150, unique=True)
     public = models.BooleanField(default=True)
     about = models.TextField(blank=True, null=True)
     type = models.CharField(

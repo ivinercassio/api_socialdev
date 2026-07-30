@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Meus Apps
     'users', 
     'posts',
+    'mideas',
 ]
 
 # Definir o modelo de Usuário customizado
@@ -144,3 +145,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+import os
+MIDEA_URL = '/midea/'
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    # Duração do token de acesso configurada para 1 hora
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
+    
+    # Duração do token de refresh (exemplo: 1 dia ou 7 dias)
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': False,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
+MIDEA_ROOT = os.path.join(BASE_DIR, 'midea')
