@@ -26,6 +26,7 @@ urlpatterns = [
     path('api/', include('users.urls')),
     path('api/', include('posts.urls')),
     path('api/', include('mideas.urls')),
+    path('api/', include('tags.urls')), # classe de relacionamento estah junta
 ]
 
 if settings.DEBUG:

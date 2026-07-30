@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'users', 
     'posts',
     'mideas',
+    'tags',
 ]
 
 # Definir o modelo de Usuário customizado
