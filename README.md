@@ -12,7 +12,7 @@
 * **FRIEND:** `{ INT id, INT friend_one (USER), INT friend_two (USER), DATE date_start }`
 * **MESSAGE:** `{ INT id, INT friend (FRIEND), INT from (USER), INT to (USER), STRING text, DATETIME data_published }`
 * **COMMENT:** `{ INT id, STRING text, INT post (POST), INT owner (USER), DATETIME date_publisheded }`
-* **REPORT:** `{ INT id, INT post (POST), DATETIME date_report }`
+* **REPORT:** `{ INT id, INT post (POST), INT comment (COMMENT), DATETIME date_report }`
 
 ---
 
@@ -48,6 +48,9 @@ Retorna uma lista com todos os comentários de um post.
 
 #### `GET /api/reports/:id/post`
 Retorna uma lista com todas as denúncias de um post.
+
+### `GET /api/reports/:id/comment`
+Retorna uma lista com todas as denúncias de um comment.
 
 ---
 
