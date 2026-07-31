@@ -1,4 +1,4 @@
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
@@ -28,17 +28,16 @@ class MideaViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(post_mideas, many=True)
         return Response(serializer.data)
 
-    @action(detail=True, methods=['get'], url_path='user')
+    @action(detail=True, methods=['get'], url_path='user', permission_classes=[permissions.AllowAny])
     def profile_by_user(self, request, pk=None):
         """
         GET /api/mideas/:id/user
-        Retorna a mídia da foto de perfil do Usuário (:id)
+        Retorna a mídia da foto de perfil do Usuário com ID :id
         """
-        # Busca a mídia que pertence ao usuário informado e tem image_profile=True
         profile_midea = Midea.objects.filter(
             owner_id=pk, 
             image_profile=True
-        ).first()
+        ).order_by('-id').first() # Traz a foto de perfil mais recente
 
         if not profile_midea:
             return Response(
