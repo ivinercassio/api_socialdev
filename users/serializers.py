@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'password', 'public', 'about', 'type', 'creation_date']
-        read_only_fields = ['id', 'creation_date']
+        read_only_fields = ['id', 'type', 'creation_date']
 
     def create(self, validated_data):
         # Criptografa a senha adequadamente ao criar o usuário

@@ -49,7 +49,7 @@ Retorna uma lista com todos os comentários de um post.
 #### `GET /api/reports/:id/post`
 Retorna uma lista com todas as denúncias de um post.
 
-### `GET /api/reports/:id/comment`
+#### `GET /api/reports/:id/comment`
 Retorna uma lista com todas as denúncias de um comment.
 
 ---
@@ -60,7 +60,8 @@ Retorna uma lista com todas as denúncias de um comment.
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+python manage.py makemigrations
 python manage.py migrate
-# python manage.py loaddata seed/seed_data.json
+python manage.py loaddata seed_data.json
 python manage.py runserver
 ```
