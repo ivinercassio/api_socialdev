@@ -17,8 +17,9 @@ class Report(models.Model):
         null=True,
         blank=True
     )
+    reason = models.TextField() 
     date_report = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         target = f"Post #{self.post.id}" if self.post else f"Comentário #{self.comment.id}"
-        return f"Denúncia do {target} em {self.date_report.strftime('%Y-%m-%d %H:%M')}"
+        return f"Denúncia do {target} ({self.reason[:20]}...) em {self.date_report.strftime('%Y-%m-%d %H:%M')}"

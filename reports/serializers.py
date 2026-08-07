@@ -7,7 +7,7 @@ class ReportSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Report
-        fields = ['id', 'post', 'post_title', 'comment', 'comment_text', 'date_report']
+        fields = ['id', 'post', 'post_title', 'comment', 'comment_text', 'reason', 'date_report']
         read_only_fields = ['id', 'date_report']
 
     def validate(self, attrs):
@@ -25,3 +25,14 @@ class ReportSerializer(serializers.ModelSerializer):
             })
 
         return attrs
+
+    def validate_reason(self, value):
+        # Valida se o reason não veio em branco
+        if not value or not value.strip():
+            raise serializers.ValidationError("O motivo da denúncia é obrigatório.")
+        return value
+
+    def update(self, instance, validated_data):
+        # Remove o 'reason' dos dados validados caso ele seja enviado em um PUT/PATCH,
+        validated_data.pop('reason', None)
+        return super().update(instance, validated_data)
