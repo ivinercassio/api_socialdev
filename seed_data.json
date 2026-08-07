@@ -260,6 +260,42 @@
     }
   },
   {
+    "model": "friends.friendrequest",
+    "pk": 1,
+    "fields": {
+      "user_one": 1,
+      "user_two": 3,
+      "date_request": "2026-02-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "friends.friendrequest",
+    "pk": 2,
+    "fields": {
+      "user_one": 1,
+      "user_two": 4,
+      "date_request": "2026-02-02T11:30:00Z"
+    }
+  },
+  {
+    "model": "friends.friendrequest",
+    "pk": 3,
+    "fields": {
+      "user_one": 4,
+      "user_two": 1,
+      "date_request": "2026-02-03T14:15:00Z"
+    }
+  },
+  {
+    "model": "friends.friendrequest",
+    "pk": 4,
+    "fields": {
+      "user_one": 3,
+      "user_two": 1,
+      "date_request": "2026-02-04T16:45:00Z"
+    }
+  },
+  {
     "model": "messages_app.message",
     "pk": 1,
     "fields": {
@@ -349,6 +385,7 @@
     "fields": {
       "post": 1,
       "comment": null,
+      "reason": "Conteúdo impróprio ou fora das diretrizes da comunidade.",
       "date_report": "2026-02-05T08:00:00Z"
     }
   },
@@ -358,6 +395,7 @@
     "fields": {
       "post": 3,
       "comment": null,
+      "reason": "Spam ou link potencialmente malicioso.",
       "date_report": "2026-02-05T09:30:00Z"
     }
   },
@@ -367,6 +405,7 @@
     "fields": {
       "post": null,
       "comment": 1,
+      "reason": "Linguagem ofensiva no comentário.",
       "date_report": "2026-02-05T10:15:00Z"
     }
   },
@@ -376,6 +415,7 @@
     "fields": {
       "post": null,
       "comment": 4,
+      "reason": "Comentário irrelevante ou repetitivo.",
       "date_report": "2026-02-05T11:00:00Z"
     }
   }
