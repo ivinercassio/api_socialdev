@@ -1,4 +1,4 @@
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.db.models import Q
@@ -28,6 +28,28 @@ class FriendViewSet(viewsets.ModelViewSet):
         )
         serializer = self.get_serializer(user_friends, many=True)
         return Response(serializer.data)
+
+    @action(
+        detail=True, 
+        methods=['get'], 
+        url_path='areFriends', 
+        permission_classes=[permissions.IsAuthenticated]
+    )
+    def are_friends(self, request, pk=None):
+        """
+        GET /api/friends/{id}/areFriends/
+        Retorna o registro de amizade entre o usuário logado e o usuário {id}
+        """
+        user_logged = request.user
+        target_user_id = int(pk)
+
+        friendship = Friend.objects.filter(
+            (Q(friend_one=user_logged) & Q(friend_two_id=target_user_id)) |
+            (Q(friend_one_id=target_user_id) & Q(friend_two=user_logged))
+        ).first()
+
+        serializer = self.get_serializer(friendship)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class FriendRequestViewSet(viewsets.ModelViewSet):
     queryset = FriendRequest.objects.all().order_by('-date_request')
