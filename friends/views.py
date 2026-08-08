@@ -1,3 +1,5 @@
+from django.db import transaction
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -50,3 +52,27 @@ class FriendRequestViewSet(viewsets.ModelViewSet):
 
         serializer = self.get_serializer(received_requests, many=True)
         return Response(serializer.data)
+    
+    @action(detail=True, methods=['post'], url_path='accept')
+    def accept_request(self, request, pk=None):
+        """
+        POST /api/friend_requests/:id/accept/
+        Exclui a solicitação de amizade e cria uma nova amizade atomicamente.
+        """
+        # Garante que a solicitação existe e que o usuário logado é o destinatário (user_two)
+        friend_request = get_object_or_404(FriendRequest, pk=pk, user_two=request.user)
+
+        # Inicia a transação atômica no banco de dados
+        with transaction.atomic():
+            # 1. Cria o registro de amizade
+            friendship = Friend.objects.create(
+                friend_one=friend_request.user_one,
+                friend_two=friend_request.user_two
+            )
+
+            # 2. Exclui a solicitação de amizade
+            friend_request.delete()
+
+        # Serializa e retorna a nova amizade criada
+        serializer = FriendSerializer(friendship, context={'request': request})
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
